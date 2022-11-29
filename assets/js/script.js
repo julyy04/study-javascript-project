@@ -94,19 +94,8 @@ $(document).ready(function () {
 
         });
 
-//----- Testimonial Start ------
 
-$("#testimonial").owlCarousel({
-    items: 1,
-    loop:true,
-    autoplay: true,
-    navText: ["<i class='fa fa-angle-right'></i>","<i class='fa fa-angle-left'></i>"],
-    center: true,
-    margin: 0,
-    nav: true,
-    dots: false,
-    autoHeight: true
-});
+
 
 //----- Testimonial2 Start ------
 
@@ -130,17 +119,30 @@ $("#testimonial2").owlCarousel({
         autoplay: true
     });
 
+    //----- Popup Start ------
+    $('.inline-popup').magnificPopup({
+      type:'inline',
+      midClick: false, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+      gallery:{
+        enabled:false
+      },
+      callbacks: {
+        open: function() {
+          $("#testimonial").owlCarousel({
+            items: 1,
+            loop:false,
+            autoplay: false,
+            navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+            center: false,
+            margin: 0,
+            nav: true,
+            dots: true
+          });
+        }
+      }
+    });
 });
 
-//----- Popup Start ------
-
-$('.inline-popup').magnificPopup({
-  type:'inline',
-  midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
-  gallery:{
-    enabled:true
-  }
-});
 
 
 /*$('.grid').masonry({

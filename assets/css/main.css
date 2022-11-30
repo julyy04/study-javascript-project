@@ -28,6 +28,9 @@ hr {
 	border-top: 1px solid;
 	color: #37393e;
 }
+.text-222{
+	color: #222;
+}
 
 textarea {
 	resize: none;
@@ -134,11 +137,30 @@ thead, tbody, tfoot {
 .align-self-stretch {
   align-self: stretch !important;
 }
-
-.scroll-y{
-	max-height: 90vh;
-	overflow-y: scroll;
+.scrollBar{
+		height: 78vh;
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+.scrollBar::-webkit-scrollbar {
+	width: 5px;  /* 스크롤바의 너비 */
 }
+.scrollBar::-webkit-scrollbar-thumb {
+	height: 30%; /* 스크롤바의 길이 */
+	background: #c9d3f4; /* 스크롤바의 색상 */
+	
+	border-radius: 5px;
+}
+
+.scrollBar::-webkit-scrollbar-track {
+	background: #fff;  /*스크롤바 뒷 배경 색상*/
+}
+@media screen and (max-width: 640px) {
+	
+
+	
+}
+
 
 
 /*--------------------- Padding ----------------*/
@@ -149,6 +171,7 @@ thead, tbody, tfoot {
 .pl-4{padding-left: 4px;}
 .pl-5{padding-left: 5px;}
 .pl-10{padding-left: 10px;}
+.pl-15{padding-left: 15px;}
 .pl-20{padding-left: 20px;}
 .pl-30{padding-left: 30px;}
 .pl-40{padding-left: 40px;}
@@ -161,6 +184,7 @@ thead, tbody, tfoot {
 .pr-4{padding-right: 4px;}
 .pr-5{padding-right: 5px;}
 .pr-10{padding-right: 10px;}
+.pr-15{padding-right: 15px!important;}
 .pr-20{padding-right: 20px;}
 .pr-30{padding-right: 30px;}
 .pr-40{padding-right: 40px;}
@@ -251,11 +275,15 @@ thead, tbody, tfoot {
 .mb-40{margin-bottom: 40px;}
 .mb-50{margin-bottom: 50px;}
 
+.mx-2{margin-left: 2px;margin-right: 2px;}
+.mt-n20{margin-top: -20px;}
 
 /*--------------------- Common Css End ----------------*/
 
 /*--------------------- Elements Start ----------------*/
-
+.rounded {
+	border-radius: 10px !important;
+}
 blockquote {
 	font-style: italic;
 	border-left: 3px solid #fff;
@@ -1069,12 +1097,7 @@ body.is-menu-visible #menu {
 
 @media only screen and (max-width: 768px) {
     .owl-carousel .owl-dot {
-	    background-color: transparent;
-	    border-radius: 100%;
-	    border: 1px solid white;
-	    display: inline-block;
 	    padding: 5px 5px !important;
-	    margin-right: 5px;
 	}
 }
 
@@ -1093,9 +1116,11 @@ body.is-menu-visible #menu {
     margin-top: -50px;
 }
 .owl-theme .owl-dots {
-    position: absolute;
-    bottom: -70px;
-    width: 100%;
+	position: absolute;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .header_slide .owl-theme .owl-dots{
 	bottom: 40px;
@@ -1112,6 +1137,17 @@ body.is-menu-visible #menu {
     padding-right: 0;
     padding-left: 0;
 }
+
+@media only screen and (max-width: 768px) {
+	.no-gutter .pr-15{
+		padding-right: 0!important;
+		padding-top: 10px;
+	}
+	.no-gutter .pl-15{
+		padding-left: 0!important;
+	}
+}
+
 .img-box {
     position: relative;
     overflow: hidden;
@@ -1229,6 +1265,14 @@ a {
     text-align: center;
     padding-top: 190px;
 }
+.head-text h1,
+.head-text h3{
+	width: 70%;
+	margin: 0 auto;
+}
+.head-text h1{
+	font-size: 60px;
+}
 .head-text a {
 	text-decoration: underline;
 	color: #fff;
@@ -1238,10 +1282,16 @@ a {
 }
 
 @media only screen and (max-width: 482px) {
+
+	.head-text h1,
+	.head-text h3{
+		width: 90%;
+	}
     .head-text h1 {
-		font-family: 'Rubik-Bold', sans-serif;
-		font-weight: 900;
-		font-size: 23px;
+		font-size: 2.3em;
+	}
+	.head-text h3{
+		font-size: 1.3em;
 	}
 }
 
@@ -1251,9 +1301,9 @@ a {
 }
 
 @media screen and (max-width: 600px){
-.mfp-arrow {
-    top: 38%;
-	}
+	.mfp-arrow {
+			top: 38%;
+		}
 }
 
 .sidebar-content a {
@@ -1276,30 +1326,35 @@ a {
 
 .grid-item-width2 { 
 	width: auto;
-    height: 321px;
+  height: 321px;
 }
 
 .grid-item {
+	position: relative;
 	width: auto;
-    height: 400px;
+  height: 400px;
 }
 
 
 .home_text {
-    position: absolute;
-    z-index: 9;
-    height: auto;
-    width: auto;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
+	position: absolute;
+	z-index: 9;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	/* transform: translateX(-50%); */
+	background-color: #00000075;
 }
 
 .home_text p{
-    /* text-decoration: underline; */
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
+	position: absolute;
+	top: 45%;
+	left: 0;
+	width: 100%;
+	color: #fff;
+	font-size: 30px;
+	font-weight: bold;
 	text-align: center;
 }
 
@@ -1330,10 +1385,12 @@ a {
   position: relative;
   background-color: #FFF;
   width: auto;
-  max-width: 1075px;
-  margin: 0px auto;
-  padding: 30px;
-  border-radius: 10px;
+  max-width: 1170px;
+	margin: 0px auto;
+	padding: 30px;
+	border-radius: 10px;
+	height: 90vh;
+	min-height: 650px;
 }
 
 .mfp-content .white-popup .col-md-4 {
@@ -1343,6 +1400,7 @@ a {
 
 .pop-up-color {
 	background-color: #fff;
+	height: 100%;
 }
 
 .pop-up-color img {
@@ -1372,6 +1430,7 @@ a {
     /* margin-left: 15px; */
 	font-weight: 800;
 	color: #000;
+	text-align: center;
 }
 
 .popup-parapraph {
@@ -1385,6 +1444,12 @@ p.popup-parapraph {
 	color: #333;
 }
 
+@media screen and (max-width: 420px) {
+	.home_text span,
+	.popup-head span{
+		display: block;
+	}
+}
 /*---------------------- Popup Section End -------------*/
 
 /*---------------------- Footer Section Start -------------*/
@@ -1417,14 +1482,55 @@ section.footer ul li a {
 
 /*---------------------- slide 수정 -------------*/
 
+.owl-carousel.owl-loaded {
+	height: 100%;
+}
 .owl-carousel .owl-item img{
 	width: auto;
 }
 .item{
 	color: #000;
 }
-@media only screen and (max-width: 768px) {
-    .footer-bottom {
-    	padding-left: 27px;
+.white-popup .owl-theme .owl-dots{
+	bottom: 0px;
+}
+.white-popup .owl-carousel .owl-dot {
+	border: 1px solid #222;
+}
+.white-popup .owl-carousel .owl-dot.active{
+	background-color: #607ce1;
+	border: 2px solid #607ce1;
+}
+.item-content{
+	width: 85%;
+	margin: 40px auto 0;
+}
+@media only screen and (max-width: 640px) {
+	.item-content{
+		width: 100%;
 	}
+	.owl-carousel .owl-item img {
+    width: 100%;
+	}
+}
+
+
+/*------------- member -------------*/
+.member .member-thumbnail{
+	display: block;
+	width: 169px;
+	height: 169px;	
+	border-radius: 50%;
+	border: 2px solid #607ce1;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+/*------------- partner -------------*/
+.partner .rounded{
+	height: 215px;
+	border: 1px solid #ddd;
+	margin: 0 2px;
+	text-align: center;
+	padding: 10px 20px;
 }

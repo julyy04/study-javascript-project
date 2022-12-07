@@ -1,13 +1,14 @@
 /********** Template CSS **********/
 :root {
-    --primary: #584DDA;
-    --primary-hover: #392dc0;
+    --primary: #6672D9;
+    --primary-hover: #4753bd;
     --secondary: #EAE9FF;
     --point-color: #FFD541;
     --light: #fff;
     --black: #000;
     --dark: #222;
-    --sub-dark: #666;
+    --sub-dark: #888;
+    --line-light: #ddd;
 }
 
 
@@ -55,7 +56,7 @@ h6,
 body{
     font-family: 'NotoSans', 'Malgun Gothic', serif;
     background-color: #fff;
-    color:var(--black);
+    color: var(--dark);
     font-size: 14px;
 }
 
@@ -107,6 +108,11 @@ body{
 /*** content ***/
 .wrap{
     width:100%;
+    max-width: 1024px;
+}
+.content{
+    width: 90%;
+    margin: 0 auto;
 }
 .head-title{
     color: var(--primary);
@@ -118,28 +124,34 @@ body{
 .list-item iframe{
     overflow: hidden;
 }
-.list-group{
-    width: 100%;
-    margin-top: 37px;
+.play-list .list-group{
+    border: 1px solid var(--line-light);
+    border-radius: 13px;
+    padding: 13px;
+    margin-top: 30px;    
+}
+.play-list .list-group:nth-child(n2){
+    padding-left: 15pxs;
 }
 .list-head span{
     display: block;
-    width:28px;
-    height: 28px;
-    border-radius: 4px;
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
     overflow: hidden;
     background-color: #fff;
+    border: 1px solid var(--line-light);
 }
 .list-head span img{
     width:100%;
 }
 .list-content{
-    padding: 0 30px;
+    padding: 0;
 }
 .list-item {
     position: relative;
     width: 100%;
-    padding-top: 175%;
+    padding-top: 50%;
 }
 .list-item iframe{
     position:absolute; 
@@ -158,13 +170,14 @@ body{
     height: 100%;
 }
 .list-title-area{
-    background-color: #fff;
+    margin: 25px 0;
 }
 .list-title-area h4{
     color: var(--dark);
 }
-.list-sub-title{
+.list-sub-text{
     color: var(--sub-dark);
+    font-weight: 100;
 }
 
 @media screen and (max-width: 320px){    

@@ -1,0 +1,215 @@
+/********** Template CSS **********/
+:root {
+    --primary: #584DDA;
+    --primary-hover: #392dc0;
+    --secondary: #EAE9FF;
+    --point-color: #FFD541;
+    --light: #fff;
+    --black: #000;
+    --dark: #222;
+    --sub-dark: #666;
+}
+
+
+/*** Jost ***/
+@font-face {
+    font-family: "NotoSans";
+    font-weight: 600;
+    src: url("../fonts/NotoSansKR-Bold.otf") format("opentype");
+}
+@font-face {
+    font-family: "NotoSans";
+    font-weight: 500;
+    src: url("../fonts/NotoSansKR-Medium.otf") format("truetype");
+}
+@font-face {
+    font-family: "NotoSans";
+    font-weight: 300;
+    src: url("../fonts/NotoSansKR-Regular.otf") format("truetype");
+}
+@font-face {
+    font-family: "NotoSans";
+    font-weight: 100;
+    src: url("../fonts/NotoSansKR-Light.otf") format("truetype");
+}
+
+
+/*** Heading ***/
+
+h1,
+.fw-bold {
+    font-weight: 700 !important;
+}
+h3,
+h4,
+.fw-semi-bold {
+    font-weight: 600 !important;
+}
+
+h5,
+h6,
+.fw-medium {
+    font-weight: 500 !important;
+}
+
+body{
+    font-family: 'NotoSans', 'Malgun Gothic', serif;
+    background-color: #fff;
+    color:var(--black);
+    font-size: 14px;
+}
+
+/*** BG ***/
+
+
+/*** Button ***/
+.btn {
+    border: none;
+    transition: .2s;
+}
+
+.btn-primary{
+    color: #fff;
+    background-color: var(--primary);
+}
+.btn-primary:hover{
+    color: #fff;
+    background-color: var(--primary-hover);
+}
+.btn{
+    width:100%;
+    text-align: center;
+}
+.btn-lg{
+    height:50px;
+    font-size: 1.2em;
+    line-height: 34px;
+    font-weight: 500;
+}
+.btn-md{
+    height:40px;
+    line-height: 40px;
+    font-weight: 500;
+}
+
+
+
+/*** font-color ***/
+
+.text-primary{
+    color: var(--primary)!important;
+}
+.text-secondary{
+    color: var(--secondary)!important;
+}
+
+
+/*** content ***/
+.wrap{
+    width:100%;
+}
+.head-title{
+    color: var(--primary);
+    line-height: 54px;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+}
+.list-head span,
+.list-item iframe{
+    overflow: hidden;
+}
+.list-group{
+    width: 100%;
+    margin-top: 37px;
+}
+.list-head span{
+    display: block;
+    width:28px;
+    height: 28px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #fff;
+}
+.list-head span img{
+    width:100%;
+}
+.list-content{
+    padding: 0 30px;
+}
+.list-item {
+    position: relative;
+    width: 100%;
+    padding-top: 175%;
+}
+.list-item iframe{
+    position:absolute; 
+    top:0; 
+    left:0;
+    width: 100%;
+    height: 100%;
+    text-align:center;
+    border-radius: 8px;
+}
+.list-item .blank{
+    position:absolute; 
+    top:0; 
+    left:0;
+    width: 100%;
+    height: 100%;
+}
+.list-title-area{
+    background-color: #fff;
+}
+.list-title-area h4{
+    color: var(--dark);
+}
+.list-sub-title{
+    color: var(--sub-dark);
+}
+
+@media screen and (max-width: 320px){    
+    .list-title-area h4{
+        font-size: 1.2em;
+    }
+}
+/* PC TOP 버튼 */
+#scrollTopPc {
+    display: none;
+    position: fixed;
+    bottom: 64px; /* 브라우저 아래쪽 끝에서부터의 거리 */
+    right: 15px; /* 브라우저 오른쪽 끝에서부터의 거리 */
+    cursor: pointer;
+    z-index: 99;
+}
+
+/* 모바일 TOP 버튼 */
+#scrollTopMob {
+    display: none;
+    position: fixed;
+    bottom: 64px; /* 브라우저 아래쪽 끝에서부터의 거리 */
+    right: 15px; /* 브라우저 오른쪽 끝에서부터의 거리 */
+    z-index: 99;
+}
+
+
+/* 모바일 DOWN 버튼 */
+.btn-go {
+    display: scroll; 
+    position: fixed; 
+    width:30px;
+    height: 30px;
+    line-height: 26px;
+    text-align: center;
+    color: var(--dark);
+    border-radius: 4px;
+    border: 1px solid var(--primary);
+    background-color: #fff;
+}
+.btn-go-up {
+    bottom: 15px; 
+    right: 5px;
+}
+.btn-go-down {
+    bottom: 30px; 
+    right: 5px;
+}

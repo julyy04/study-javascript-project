@@ -2,13 +2,14 @@
 :root {
     --primary: #6672D9;
     --primary-hover: #4753bd;
-    --secondary: #EAE9FF;
+    --secondary: #EFF1FF;
     --point-color: #FFD541;
     --light: #fff;
     --black: #000;
     --dark: #222;
     --sub-dark: #888;
     --line-light: #ddd;
+    --light-text:#ccc;
 }
 
 
@@ -36,7 +37,10 @@
 
 
 /*** Heading ***/
-
+body, dl,dt,dd,ul,li,ol{
+    padding: 0;
+    margin: 0;
+}
 h1,
 .fw-bold {
     font-weight: 700 !important;
@@ -176,11 +180,18 @@ body{
     color: var(--dark);
 }
 .list-sub-text{
+    font-size: 12px;
     color: var(--sub-dark);
     font-weight: 100;
 }
 
+@media screen and (max-width: 420px){    
+    .list-title-area {
+        margin: 15px 0;
+    }
+}
 @media screen and (max-width: 320px){    
+    
     .list-title-area h4{
         font-size: 1.2em;
     }
@@ -226,3 +237,51 @@ body{
     bottom: 30px; 
     right: 5px;
 }
+
+/*** bottom ***/
+.bt-content{
+    border-radius: 13px;
+    background-color: var(--secondary);
+    padding: 30px 40px;
+}
+.bt-content li{
+    list-style: none;
+    color: var(--sub-dark);
+    padding-left: 10px;
+}
+.bt-content li::before{
+    content: '-';
+    display: inline-block;
+    margin: 0 10px 0 0;
+}
+.bt-content dl{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.bt-content dt{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    color: var(--primary);
+    text-align: center;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-right: 15px;
+}
+.bt-content dt::after{
+    content: '\f0d7';
+    display: block;
+    position: absolute;
+    bottom: -20px;
+    width: 100%;
+    line-height: 20px;
+    font-family: 'FontAwesome';
+    text-align: center;
+}
+.bt-content dl:last-child dt::after{
+    content: none;
+}
+

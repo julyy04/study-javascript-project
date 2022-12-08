@@ -13,7 +13,7 @@
 }
 
 
-/*** Jost ***/
+/*** NotoSans ***/
 @font-face {
     font-family: "NotoSans";
     font-weight: 600;
@@ -246,8 +246,9 @@ body{
 }
 .bt-content li{
     list-style: none;
+    font-size: 12px;
     color: var(--sub-dark);
-    padding-left: 10px;
+    font-weight: 100; 
 }
 .bt-content li::before{
     content: '-';
@@ -264,7 +265,7 @@ body{
     width: 60px;
     height: 60px;
     line-height: 60px;
-    font-size: 18px;
+    font-size: 14px;
     color: var(--primary);
     text-align: center;
     border-radius: 50%;
@@ -283,5 +284,9 @@ body{
 }
 .bt-content dl:last-child dt::after{
     content: none;
+}
+.bt-content dd{
+    font-size: 13px;
+    font-weight: 300;
 }
 
